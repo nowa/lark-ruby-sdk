@@ -72,8 +72,8 @@ module Lark
       app_token_store.token
     end
 
-    def set_app_access_token(t)
-      app_token_store.update_token(t)
+    def set_app_access_token(d)
+      app_token_store.update_token(d)
     end
 
     def tenant_access_token

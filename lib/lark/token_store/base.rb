@@ -17,12 +17,9 @@ module Lark
         token.present?
       end
 
-      def update_token(t)
-        value = t
-        unless value
-          data = fetch_token.data
-          value = data[token_key]
-        end
+      def update_token(d)
+        data = d ? d : fetch_token.data
+        value = data[token_key]
         if value.nil?
           Lark.logger.error "#{self.class.name} fetch token error: #{data.inspect}"
         else
