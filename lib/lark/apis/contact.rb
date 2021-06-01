@@ -78,6 +78,10 @@ module Lark
         post 'contact/v1/user/update', payload
       end
 
+      def user_get(user_id, payload={})
+        get "contact/v3/users/#{user_id}", payload
+      end
+
       def user_batch_get(params={})
         get 'contact/v1/user/batch_get', params: params
       end
